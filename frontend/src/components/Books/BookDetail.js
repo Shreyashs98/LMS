@@ -14,13 +14,15 @@ const BookDetail = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [bookImage, setBookImage] = useState('');
+  const [published, setPublishedDate] = useState('');
 
   useEffect(() => {
     if (!loading && book) {
       setCategory(book.category);
       setTitle(book.title);
       setAuthor(book.author);
-      setBookImage(book.bookImage); // Add this line to set the initial value for bookImage
+      setBookImage(book.bookImage);
+      setPublishedDate(book.published); // Added to set the initial value for published date
     }
   }, [loading, book]);
 
@@ -29,20 +31,17 @@ const BookDetail = () => {
     dispatch(fetchBook(id));
   }, [dispatch, id]);
 
-  // const navigate = useNavigate();
-
   const formSubmitHandler = e => {
     e.preventDefault();
     const data = {
       category,
       title,
       author,
-      bookImage, // Add bookImage to the data object
+      bookImage,
+      published,
     };
     dispatch(updateBook(id, data));
-    // navigate('/books');
-    window.location.reload();
-    window.history.back();  
+    window.history.back();
   };
 
   return (
@@ -78,7 +77,6 @@ const BookDetail = () => {
                       <option value='health'>Health</option>
                       <option value='sports'>Sports</option>
                       <option value='technology'>Technology</option>
-                      {/* Add more options as needed */}
                   </select>
                 </div>
                 <div className='form-group'>
@@ -101,6 +99,16 @@ const BookDetail = () => {
                     className='form-control'
                     id='title'
                     placeholder='Book title'
+                  />
+                </div>
+                <div className='form-group'>
+                  <label htmlFor='publishedDate'>Published Date</label>
+                  <input
+                    id='publishedDate'
+                    value={published}
+                    onChange={e => setPublishedDate(e.target.value)}
+                    type='date'
+                    className='form-control'
                   />
                 </div>
                 <div className='form-group'>

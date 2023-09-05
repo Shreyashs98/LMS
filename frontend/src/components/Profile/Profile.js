@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Profile.css';
-import pic from '../../assets/img/bookpic.jpg';
+import pic from '../../assets/img/profilepic.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUserProfile } from '../../redux/actions/users/userActions';
 import Loading from '../Loading/Loading';
@@ -74,16 +74,24 @@ const Profile = ({ history }) => {
           {loading && !user ? (
             <Loading />
           ) : (
-            <div className='card'>
-              <img src={pic} className='card-img-top' alt='User Profile' />
-              <div className='card-body text-center'>
-                <h5 className='card-title'>{user && user.name}</h5>
-                <p className='card-text'>{user && user.email}</p>
-                <Link to='/user-update' className='btn btn-primary'>
-                  Update Profile
-                </Link>
-              </div>
-            </div>
+            <div className='d-flex justify-content-center' >
+  <div className='card' style={{ maxWidth: '300px' }}>
+    <img
+      src={pic}
+      className='card-img-top img-responsive'
+      alt='User Profile'
+    />
+    <div className='card-body text-center'>
+      <h5 className='card-title'>{user && user.name}</h5>
+      <p className='card-text'>{user && user.email}</p>
+      <Link to='/user-update' className='btn btn-primary'>
+        Update Profile
+      </Link>
+    </div>
+  </div>
+</div>
+
+
           )}
         </div>
       </div>
@@ -107,15 +115,14 @@ const Profile = ({ history }) => {
               <table className='table table-hover'>
                 <thead>
                   <tr>
-                    <th scope='col'>Author</th>
                     <th scope='col'>Book Name</th>
+                    <th scope='col'>Author</th>
                     <th scope='col'>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {filteredBooks.map(book => (
                     <tr className='table-light' key={book._id}>
-                      <th scope='row'>{book.author}</th>
                       <td>
                         <button
                           className='btn btn-link'
@@ -123,6 +130,7 @@ const Profile = ({ history }) => {
                           {book.title}
                         </button>
                       </td>
+                      <th scope='row'>{book.author}</th>
                       <td>
                         <div className='d-flex'>
                           <Link to={`/book/${book._id}`} className='btn btn-warning mr-2'>

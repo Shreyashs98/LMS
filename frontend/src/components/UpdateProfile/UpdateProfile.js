@@ -68,7 +68,7 @@ const UpdateProfile = () => {
                 />
               </div>
               <div className='form-group'>
-                <label htmlFor='exampleInputPassword1'>Password</label>
+                <label htmlFor='exampleInputPassword1'>New Password</label>
                 <input
                   value={password}
                   onChange={e => setpassword(e.target.value)}

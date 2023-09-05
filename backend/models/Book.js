@@ -10,6 +10,10 @@ const BookSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    published: {
+      type: Date,
+      required: true,
+    },
     title: {
       type: String,
     },
@@ -19,7 +23,7 @@ const BookSchema = new mongoose.Schema(
       required: true,
     },
     bookImage: {
-      type: String, 
+      type: String,
     },
   },
   { timestamps: true }

@@ -29,7 +29,7 @@ const Header = () => {
     <header>
       <nav className='navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-dark bg-dark navbar-custom'>
         <Link className='navbar-brand' to='/' onClick={closeNavbar}>
-        <i class="bi bi-journals"></i> Book Library
+        <i className="bi bi-journals"></i> Book Library
         </Link>
         <button
   className='navbar-toggler'
@@ -43,14 +43,14 @@ const Header = () => {
           <ul className='navbar-nav ml-auto'>
             <li className='nav-item active'>
               <Link className='nav-link' to='/' onClick={closeNavbar}>
-              <i class="bi bi-house"></i> Home <span className='sr-only'>(current)</span>
+              <i className="bi bi-house"></i> Home <span className='sr-only'>(current)</span>
               </Link>
             </li>
             {userInfo ? (
               <>
                 <li className='nav-item'>
                   <Link className='nav-link' to='/books' onClick={closeNavbar}>
-                  <i class="bi bi-book"></i> Books
+                  <i className="bi bi-book"></i> Books
                   </Link>
                 </li>
                 <li className='nav-item dropdown'>
@@ -61,21 +61,18 @@ const Header = () => {
                     aria-haspopup='true'
                     aria-expanded='false'
                     onClick={closeNavbar}>
-                    <i class="bi bi-person-circle"></i> {userInfo.name}
+                    <i className="bi bi-person-circle"></i> {userInfo.name}
                   </Link>
                   <div className='dropdown-menu'>
                     <Link className='dropdown-item' to='/profile' onClick={closeNavbar}>
                       Profile
                     </Link>
-                    <Link className='dropdown-item' to='/addbook' onClick={closeNavbar}>
-                      Add book
-                    </Link>
-                    <Link className='dropdown-item' to='/books' onClick={closeNavbar}>
-                      Books
+                    <Link className='dropdown-item' to='/user-update' onClick={closeNavbar}>
+                      Change Password
                     </Link>
                     <div className='dropdown-divider'></div>
                     <button onClick={logoutHandler} className='dropdown-item text-danger'>
-                    <i class="bi bi-box-arrow-in-left"></i> Logout
+                    <i className="bi bi-box-arrow-in-left"></i> Logout
                     </button>
                   </div>
                 </li>
@@ -84,7 +81,7 @@ const Header = () => {
               <>
                 <li className='nav-item'>
                   <Link className='nav-link' to='/login' onClick={closeNavbar}>
-                  Login <i class="bi bi-box-arrow-in-right"></i> 
+                  Login <i className="bi bi-box-arrow-in-right"></i> 
                   </Link>
                 </li>
               </>
