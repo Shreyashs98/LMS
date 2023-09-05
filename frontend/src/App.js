@@ -8,8 +8,8 @@ import Profile from './components/Profile/Profile';
 import Books from './components/Books/Books';
 import AddBook from './components/Books/AddBook';
 import UpdateProfile from './components/UpdateProfile/UpdateProfile';
-import BookDetail from './components/Books/BookDetail';
-import Book from './components/Books/BookDetailsModal';
+import UpdateBook from './components/Books/BookDetail';
+import BookPreview from './components/Books/BookDetailsModal';
 
 const App = () => {
   return (
@@ -22,10 +22,10 @@ const App = () => {
           <Route path='/login' element={<Login />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/books' element={<Books />} />
-          <Route path='/bookpreview/:id' element={<Book />} />
+          <Route path='/bookpreview/:id' element={<BookPreview />} />
           <Route path='/addbook' element={<AddBook />} />
           <Route path='/user-update' element={<UpdateProfile />} />
-          <Route path='/book/:id' element={<BookDetail />} />
+          <Route path='/book/:id' element={<UpdateBook />} />
         </Routes>
       </BrowserRouter>
     </>
