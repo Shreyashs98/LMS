@@ -14,20 +14,19 @@ const Home = () => {
         <div className='SubContent'>
           <h1 style={{ fontWeight: 'bold', fontSize: '4rem', color: 'white' }}>Book Library</h1>
           <p style={{ fontWeight: 'bold', fontSize: '2rem', color: 'white' }}>Manage your Books</p>
-
-          <button type='button' className='btn btn-outline-dark'>
-            <Link to='/login' style={{ fontFamily: 'Arial, sans-serif', textDecoration: 'none' }}>Get started</Link>
-          </button>
-
-          {/* Add the "Download for Android" button */}
-          <a
-            href='https://github.com/Shreyashs98/LMS/blob/main/frontend/src/assets/App/bk_download.apk'
-            className='btn btn-primary'
-            style={{ fontFamily: 'Arial, sans-serif', textDecoration: 'none', marginLeft: '10px' }}
-            download
+          <button
+            type='button'
+            className='btn btn-outline-dark'
+            style={{ fontFamily: 'Arial, sans-serif', textDecoration: 'none', backgroundColor: 'blue', color: 'white' }}
           >
-            Download for Android
-          </a>
+            <a
+              href='https://drive.google.com/uc?id=1aTRoJKPHmQvkKYL3jIQjJj_VscmhJVXu&export=download'
+              style={{ fontFamily: 'Arial, sans-serif', textDecoration: 'none', color: 'white' }}
+              download
+            >
+              Download for Android
+            </a>
+          </button>
         </div>
       </div>
     </div>
