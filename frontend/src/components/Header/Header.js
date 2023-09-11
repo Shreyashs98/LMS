@@ -32,13 +32,12 @@ const Header = () => {
         <i className="bi bi-journals"></i> Book Library
         </Link>
         <button
-  className='navbar-toggler'
-  type='button'
-  onClick={() => setIsNavOpen(!isNavOpen)}>
-  <i className="bi bi-card-list" style={{ fontSize: '25px' }}></i>
-</button>
-
-
+          className='navbar-toggler'
+          type='button'
+          onClick={() => setIsNavOpen(!isNavOpen)}>
+          <i className="bi bi-card-list" style={{ fontSize: '25px' }}></i>
+        </button>
+        
         <div className={`collapse navbar-collapse show-custom${isNavOpen ? ' show' : ''}`} id='navbarColor01'>
           <ul className='navbar-nav ml-auto'>
             <li className='nav-item active'>

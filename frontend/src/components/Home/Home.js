@@ -1,12 +1,11 @@
 import React from 'react';
 import './Home.css'; // Import custom styles for Home component
 import videoSource from '../../assets/books.mp4'; // Import the video source
-import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <div className='Container'>
-      <video autoPlay='autoplay' loop='loop' muted className='Video'>
+      <video autoPlay='autoplay' loop='loop' muted className='Video' style={{ opacity: 0.7 }}>
         <source src={videoSource} type='video/mp4' />
         Not supported the video
       </video>

@@ -26,6 +26,7 @@ const Books = () => {
     try {
       await dispatch(deleteBook(id));
       navigate('/books');
+      window.location.reload();
     } catch (error) {
       console.error('Error deleting book:', error);
     }
